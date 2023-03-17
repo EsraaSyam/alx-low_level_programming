@@ -11,8 +11,7 @@ int main(void)
 
 	for (i = 0 ; i < 100 ; i++)
 	{
-		j = i + 1;
-		while (j < 100)
+		for (j = i + 1 ; j < 100 ; j++)
 		{
 			putchar(i / 10 + '0');
 			putchar(i % 10 + '0');
@@ -25,8 +24,6 @@ int main(void)
 
 			putchar(',');
 			putchar(' ');
-
-			j++
 		}
 	}
 	putchar('\n');
