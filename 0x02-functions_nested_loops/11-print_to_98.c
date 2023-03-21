@@ -21,7 +21,7 @@ void print_to_98(int n)
 	}
 	else
 	{
-		for (i = n ; i >= 89 ; i--)
+		for (i = n ; i >= 98 ; i--)
 		{
 			_putchar(i + '0');
 			if (i == 98)
