@@ -16,7 +16,7 @@ void print_to_98(int n)
 			_putchar(i + '0');
 			if (i == 98)
 				continue;
-			_putchar(',');
+			printf(", ");
 		}
 	}
 	else
@@ -26,7 +26,7 @@ void print_to_98(int n)
 			_putchar(i + '0');
 			if (i == 98)
 				continue;
-			_putchar(',');
+			printf(", ");
 		}
 	}
 
