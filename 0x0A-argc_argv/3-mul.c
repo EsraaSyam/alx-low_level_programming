@@ -6,7 +6,7 @@
  * main - print multiplication of two numbers.
  * @argc: number of arguments
  * @argv: array of arguments
- * Return: 0 (success)
+ * Return: 0 on success, 1 on error.
  */
 
 int main(int argc, char *argv[])
@@ -21,11 +21,10 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		i = _atoi(argv[1]);
-		j = _atoi(argv[2]);
+		i = atoi(argv[1]);
+		j = atoi(argv[2]);
 		mul = i * j;
-		printf("%d", mul);
-		printf("\n");
+		printf("%d\n", mul);
 		return (0);
 	}
 }
