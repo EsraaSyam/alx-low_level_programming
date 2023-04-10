@@ -1,31 +1,29 @@
 #include "main.h"
 
 /**
- * _atoi - Entry point
- * @s: input
- * Return: Always 0 (Success)
+ * _atoi - convert a string into an integer.
+ *
+ * @s: the string to use.
+ *
+ * Return: integer.
  */
 
 int _atoi(char *s)
 {
-	int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, p = 0, q = 0, r = 0;
-	int a[1000];
+	int sign = 1, i = 0;
+	unsigned int res = 0;
 
-	for (; s[i] != '\0'; i++)
+	while (!(s[i] <= '9' && s[i] >= '0') && s[i] != '\0')
 	{
 		if (s[i] == '-')
-			j++;
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			a[k] = s[i] - '0';
-			k++;
-		}
+			sign *= -1;
+		i++;
 	}
-	for (; l < k; l++)
+	while (s[i] <= '9' && (s[i] >= '0' && s[i] != '\0'))
 	{
-		m = m * 10 + a[l];
+		res = (res * 10) + (s[i] - '0');
+		i++;
 	}
-	if (j % 2 != 0)
-		m = -m;
-	return (m);
+	res *= sign;
+	return (res);
 }
