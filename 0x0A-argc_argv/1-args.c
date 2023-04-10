@@ -3,16 +3,16 @@
 #include <string.h>
 
 /**
- * main - prints the name of the program
+ * main - print the number of arguments passed to the input.
  * @argc: number of arguments
  * @argv: array of arguments
- * Return: 0
+ * Return: 0 (success)
  */
 
 int main(int argc, char *argv[])
 {
-	(void)argc;
-	printf("%s\n", argv[0]); 
+	(void)argv;
+	printf("%d", argc - 1);
+	printf("\n");
 	return (0);
 }
-
