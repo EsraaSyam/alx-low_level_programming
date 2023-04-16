@@ -10,5 +10,6 @@ int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *mul(char *num1, char *num2);
 int _isdigit(char *c);
+char *argstostr(int ac, char **av);
 
 #endif
