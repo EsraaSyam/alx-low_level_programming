@@ -1,0 +1,35 @@
+#include "3-calc.h"
+
+/**
+ * main - performs simple operations
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: 0
+ */
+
+int main(int argc, char *argv[])
+{
+	int a, b;
+	int (*f)(int, int);
+
+	if (argc != 4)
+	{
+		printf("Error");
+		exit(98);
+	}
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	f = get_op_func(argv[2]);
+	if (f == NULL)
+	{
+		printf("Error");
+		exit(99);
+	}
+	if ((argv[2][0] == '/' || argv[2][0] == '%') && !b)
+	{
+		printf("Error");
+		exit(100);
+	}
+	printf("%d", f(a, b));
+	return (0);
+}
