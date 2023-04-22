@@ -64,7 +64,7 @@ void print_all(const char * const format, ...)
 {
 	va_list curr;
 	unsigned int i, j;
-	char *str;
+	const char *sep = "";
 
 	print_t print[] = {
 		{"c", print_char},
@@ -73,24 +73,21 @@ void print_all(const char * const format, ...)
 		{"s", print_string},
 		{NULL, NULL}
 	};
-
 	va_start(curr, format);
-	i = 0;
-	while (format != NULL && format[i] != '\0')
+	i = 0 , j = 0;
+	while (format  && format[i])
 	{
-		j = 0;
-		while (print[j].c != NULL)
+		while (print[j].c[0] != NULL)
 		{
-			if (format[i] == print[j].c[0])
+			if (format[i] == (print[j].c[0]))
 			{
+				printf("%s", sep);
 				print[j].f(curr);
-				if (format[i + 1] != '\0')
-					printf(", ");
+				sep = ", ";
 			}
 			j++;
 		}
+		j = 0;
 		i++;
 	}
-	printf("\n");
-	va_end(curr);
 }
