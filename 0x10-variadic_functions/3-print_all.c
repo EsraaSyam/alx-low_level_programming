@@ -75,19 +75,20 @@ void print_all(const char * const format, ...)
 	};
 	va_start(curr, format);
 	i = 0, j = 0;
-	while (format  && format[i])
+	while (format && format[i])
 	{
-		while (print[j].c[0] != NULL)
+		j = 0;
+		while (j < 4)
 		{
-			if (format[i] == (print[j].c[0]))
+			if (format[i] == print[j].c[0])
 			{
 				printf("%s", sep);
 				print[j].f(curr);
 				sep = ", ";
+				break;
 			}
 			j++;
 		}
-		j = 0;
 		i++;
 	}
 	printf("\n");
