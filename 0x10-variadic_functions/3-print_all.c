@@ -74,7 +74,7 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 	va_start(curr, format);
-	i = 0 , j = 0;
+	i = 0, j = 0;
 	while (format  && format[i])
 	{
 		while (print[j].c[0] != NULL)
