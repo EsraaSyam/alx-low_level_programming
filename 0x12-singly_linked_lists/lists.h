@@ -3,23 +3,25 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * struct listint_s - singly linked list
- * @n: integer
+ * struct list_s - singly linked list
+ * @str: string - (malloc'ed string)
+ * @len: length of the string
  * @next: points to the next node
  *
- * Description: singly linked list node struct
- * for Holberton project
+ * Description: singly linked list node structure
  */
-typedef struct listint_s
+typedef struct list_s
 {
 	char *str;
-	unsigned int len;
-	struct listint_s *next;
+	size_t len;
+	struct list_s *next;
 } list_t;
 
 /* Prototypes */
 size_t print_list(const list_t *h);
+void print_unsigned_int(unsigned int n);
 
 #endif /* LISTS_H */
