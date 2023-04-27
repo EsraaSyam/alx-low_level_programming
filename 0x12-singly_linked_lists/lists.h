@@ -23,5 +23,6 @@ typedef struct list_s
 /* Prototypes */
 size_t print_list(const list_t *h);
 void print_unsigned_int(unsigned int n);
+void _puts(char *str);
 
 #endif /* LISTS_H */
